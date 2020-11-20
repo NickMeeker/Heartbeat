@@ -37,8 +37,9 @@ router.patch('/ping/:username', tokenUtils.verifyToken, (req, res) => {
       success: false,
       message: `${username} does not match session username`
     });
+    return;
   }
-
+  
 
   if (username) {
     Heartbeat.findOneAndUpdate({ username }, {
