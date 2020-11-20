@@ -4,6 +4,6 @@
   },
   "token": {
     "secret": "cap5415_final_project",
-    "expiresInSeconds": 3600
+    "expiresInSeconds": 5
   }
 }

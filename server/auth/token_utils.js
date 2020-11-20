@@ -13,9 +13,9 @@ const verifyToken = (req, res, next) => {
                     success: false,
                     message: 'Failed to authenticate token'
                 });
+            } else {
+                next();
             }
-
-            next();
         });
     } else {
         res.status(403).send({

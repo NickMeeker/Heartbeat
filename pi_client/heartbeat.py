@@ -1,7 +1,7 @@
 import argparse, time, requests
 
 port = '30000'
-url = 'http://localhost'
+url = 'http://nickurl.com'
 
 def login_and_return_token(args):
   login_body = {
@@ -22,7 +22,6 @@ def ping_heartbeat_and_return_response(args, token):
   return r
 
 def main(args):
-  # login
   startTime = time.time()
   token = ''
   while True:
@@ -31,8 +30,6 @@ def main(args):
       token = login_and_return_token(args)
       ping_heartbeat_and_return_response(args, token)
     time.sleep(5 * 60.0)
-  
-
 
 parser = argparse.ArgumentParser(description='Heartbeat client.')
 parser.add_argument('--username', metavar='U', help='username for this client')
